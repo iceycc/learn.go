@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	// 数据类型选择不正确，计算
 	var a, b int8 = 30, 11
 	fmt.Println("a + b = ", a+b)
 	fmt.Println("a - b = ", a-b)

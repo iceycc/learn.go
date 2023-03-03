@@ -15,7 +15,7 @@ func main() {
 	var int3, int4 uint = 33, 44
 	fmt.Println(int3 * int4)
 
-	 ho, ver  := 3, 4.123
+	ho, ver := 3, 4.123
 	var sc = ho * int(ver)
 	fmt.Println(ho * int(ver))
 	fmt.Println(sc)
