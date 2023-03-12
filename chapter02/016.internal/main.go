@@ -8,6 +8,10 @@ import (
 
 func main() {
 	startTime := time.Now()
+	// deffer 会在函数结束时执行
+	// 会按照先进后出的顺序执行
+	// 会在return、panic、之前执行
+
 	defer func() {
 		finishTime := time.Now()
 		fmt.Println(startTime, finishTime)
@@ -28,12 +32,25 @@ func main() {
 	copy(arr3, arr2)
 
 	i := 3333
+	// 通过指针获取值
 	j := &i
 	fmt.Println(reflect.TypeOf(j))
+
+	//
+	arr4 := []int{}
+	fmt.Println(arr4)
+	// make 会初始化数组
+	// new
+	arr5 := make([]string, 0, 4)
+	fmt.Println(arr5)
+
+	i2 := new(int)
+	fmt.Println(i2)
+
 }
 
 func testPanic() []string {
-	arr2 := make([]string, 0, 4)
+	arr2 := make([]string, 1, 4)
 	fmt.Println("len: ", len(arr2), "cap: ", cap(arr2))
 	fmt.Println("default:", arr2[0])
 	fmt.Println("default:", arr2[1])

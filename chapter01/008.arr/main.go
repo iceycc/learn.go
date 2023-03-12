@@ -18,10 +18,11 @@ func main() {
 
 	fmt.Println("2nd version")
 	// 难点：数组长度管理
-	newPersonInfos := [3][3]string{
+	newPersonInfos := [4][3]string{
 		[3]string{"小强", "男", "在职"},
 		[3]string{"小李", "男", "在职"},
 		[3]string{"小苏", "女", "在职"},
+		[3]string{"小柳", "女", "在职"},
 	}
 	for _, val := range newPersonInfos {
 		fmt.Println(val)
@@ -29,6 +30,7 @@ func main() {
 
 	fmt.Println("3rd version")
 	// ... 支持动态添加
+	// newPersonInfos := [...][3]string{
 	newPersonInfos2 := [][3]string{ // [...][3]string{
 		[3]string{"小强", "男", "在职"},
 		[3]string{"小李", "男", "在职"},

@@ -6,6 +6,9 @@ func main() {
 	var a string = "您好"
 	fmt.Println(a)
 
+	// byte 和 rune
+	// byte 是 uint8 的别名
+	// rune 是 int32 的别名
 	fmt.Println("byte a: ", []byte(a), len([]byte(a)))
 	fmt.Println("rune a: ", []rune(a), len([]rune(a)))
 

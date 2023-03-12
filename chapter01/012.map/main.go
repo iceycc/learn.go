@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+// map的注意事项
+// 1. map的key必须是可以比较的，比如int、string、bool、struct、array、slice、map
 func main() {
 	names := []string{"小强", "周毅", "旭东"}
 	fr := []float64{28, 18, 18}
@@ -19,6 +21,7 @@ func main() {
 
 	fmt.Println("定义Map")
 
+	// nil 是空指针，不能直接使用
 	var m1 map[string]int = nil
 	// m1["a"] = 1 // panic on nil map
 	delete(m1, "a")
@@ -37,10 +40,20 @@ func main() {
 
 	m3["小强"] = 77
 	fmt.Println("小强的分数：", m3["小强"])
+	// map返回值有两个，第二个是bool类型，表示是否存在
 	xqScore, ok = m3["小强"]
 	fmt.Println(xqScore, ">>>>>", ok)
 
 	for name, score := range m3 {
 		fmt.Println(name, "=", score)
 	}
+
+	m4 := map[string]interface{}{
+		"wby1": "小强",
+		"age":  18,
+	}
+	fmt.Println(m4)
+
 }
+
+// 给10个同学的分数mock数据

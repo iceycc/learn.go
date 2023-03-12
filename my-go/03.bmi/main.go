@@ -25,13 +25,68 @@ func If(condition bool, trueVal, falseVal interface{}) interface{} {
 	}
 	return falseVal
 }
-func main() {
-	var weight float64 = 80
-	var height float64 = 1.7
-	var age int = 31
-	var six string = "男"
+func scan() (string, float64, float64) {
+	var name string
+	fmt.Print("姓名：")
+	fmt.Scanln(&name)
+
+	var weight float64
+	fmt.Print("体重(kg)：")
+	fmt.Scanln(&weight)
+
+	var height float64
+	fmt.Print("身高(m)：")
+	fmt.Scanln(&height)
+
+	var age int
+	fmt.Print("年龄：")
+	fmt.Scanln(&age)
+
+	var six string
+	fmt.Print("性别（男/女）：")
+	fmt.Scanln(&six)
+
 	var myBmi float64 = getBMI(weight, height)
 	var myBmiRate float64 = getBmiRate(myBmi, age, If(six == "男", 1, 0).(int))
-	fmt.Println("请输入体重(kg)：", myBmi, myBmiRate)
-
+	fmt.Println(myBmi, myBmiRate)
+	if myBmiRate < 0.1 {
+		fmt.Println("偏瘦")
+	} else if myBmiRate < 0.2 {
+		fmt.Println("正常")
+	} else if myBmiRate < 0.3 {
+		fmt.Println("超重")
+	} else {
+		fmt.Println("肥胖")
+	}
+	var flag string
+	fmt.Println("是否继续(y/n)：")
+	fmt.Scanln(&flag)
+	return flag, myBmi, myBmiRate
+	//if flag == "y" {
+	//	scan()
+	//} else {
+	//	return
+	//}
+}
+func main() {
+	var bmis [3]float64
+	var bmiRates [3]float64
+	var i = 0
+	for {
+		var flag, myBmi, myBmiRate = scan()
+		bmis[i] = myBmi
+		bmiRates[i] = myBmiRate
+		if flag == "n" {
+			break
+		}
+		i++
+		if i == 3 {
+			break
+		}
+	}
+	var sumBmi float64 = 0
+	for i := 0; i < len(bmis); i++ {
+		sumBmi += bmis[i]
+	}
+	println(int(sumBmi / float64(len(bmis))))
 }

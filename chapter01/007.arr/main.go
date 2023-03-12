@@ -18,19 +18,28 @@ func main() {
 
 	// var xxxx type
 	var ages4 [3]int
-	fmt.Println("ages4: ", ages4)
+	fmt.Println("ages4: ", ages4) // [0 0 0]
+
 	ages4[0] = 1000
 	ages4[1] = 1111
 	ages4[2] = 2222
-	fmt.Println("ages4: ", ages4)
+	fmt.Println("ages4: ", ages4) // [1000 1111 2222]
 	// ages4[-1]=-1 //错误，越界
 	// ages4[99]=-1 //错误，越界
 
 	for i := 0; i < len(ages4); i++ {
-		fmt.Println(ages4[i])
+		fmt.Println(ages4[i]) // 1000 1111 2222
 	}
 
 	for i, val := range ages4 {
 		fmt.Println(ages4[i], "====>", i, "->", val)
 	}
+
+	for i := 0; i < len(ages4); i++ {
+		fmt.Println(ages4[i], i)
+	}
+
+	// 数组特性
+	// 1. 数组长度固定
+	// 2. 数组长度是类型的一部分
 }
