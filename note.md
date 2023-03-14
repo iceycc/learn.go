@@ -72,3 +72,5 @@ conbra
 
 ## fmt.Scanln() 与 fmt.Scanf() 的区别
 
+
+env |grep GOPATH

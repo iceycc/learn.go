@@ -39,7 +39,7 @@ func main() {
 
 	fmt.Println(fib(1))
 
-	fmt.Println("done calc, sleep somewhile")
+	fmt.Println("done ICalc, sleep somewhile")
 	time.Sleep(10 * time.Second)
 
 	// sampleSubdomain2()
